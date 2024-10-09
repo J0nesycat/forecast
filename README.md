@@ -39,10 +39,7 @@ This project is a weather forecast application that retrieves current weather da
     ```bash
     source .venv/bin/activate
     ```
-2. Run the application:
-    ```bash
-    python weather.py
-    ```
+
 ## Setting Up the API Key
 
 1. **Run the container in interactive mode**:
@@ -50,14 +47,19 @@ This project is a weather forecast application that retrieves current weather da
    ```bash
    docker run -it -p 5000:5000 jonesycat/weather_forecast /bin/bash
 
-2.Navigate to the directory: Once inside the container, they can navigate to the directory where APIkey.py is located:
+2. Navigate to the directory: Once inside the container, they can navigate to the directory where APIkey.py is located:
 cd /app/weather_app/OpenWeatherMapAPI/
 
-3.Open the file for editing:
+3. Open the file for editing:
 nano APIkey.py
 
 key = "YOUR_API_KEY_HERE"  # Replace this with your actual API key
 
+4. Run the application:
+    ```bash
+    python weather.py
+    ```
+Note: The path to weather.py is  /app/weather_app
 
 ## Contributions
 Feel free to submit issues, fork the project, or contribute via pull requests.
