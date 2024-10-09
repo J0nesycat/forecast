@@ -43,6 +43,11 @@ This project is a weather forecast application that retrieves current weather da
     ```bash
     python weather.py
     ```
+## Setting Up the API Key
+
+1. Open the `weather_app/OpenWeatherMapAPI/APIkey.py` file.
+2. Replace `YOUR_API_KEY_HERE` with your actual OpenWeatherMap API key.
+3. Save the changes.
 
 ## Contributions
 Feel free to submit issues, fork the project, or contribute via pull requests.
