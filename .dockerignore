@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.py[cod]
+weather_app/OpenWeatherMapAPI/APIkey.py
+weather_app/accounts/users_db.json
+.idea/
+
+
