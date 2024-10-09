@@ -1,0 +1,19 @@
+# Ignore virtual environment
+.venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.py[cod]
+
+#ignore sensitive files
+weather_app/OpenWeatherMapAPI/APIkey.py
+
+#ignore database
+weather_app/accounts/users_db.json
+
+# Ignore JetBrains IDE settings
+.idea/
+
+# Ignore log files (if applicable)
+*.log
+
