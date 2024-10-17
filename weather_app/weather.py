@@ -1,6 +1,7 @@
 
-from accounts.authorization import authorize
-
+from weather_app.accounts.authorization import authorize
+from weather_app.OpenWeatherMapAPI.search import Geocoding
+from weather_app.OpenWeatherMapAPI.forecast import weather_forecast
 
 
 def main():
@@ -15,9 +16,9 @@ def main():
         print("Proceeding to the software...")
         decision=input("Would you like to get geographical coordinates first? y/n: ")
         if decision == "y":
-            from OpenWeatherMapAPI import search
+            Geocoding()
         else:
-            from OpenWeatherMapAPI import forecast
+            weather_forecast()
 
     else:
         print(login[1])

@@ -1,7 +1,13 @@
 import requests
-from OpenWeatherMapAPI.APIkey import key
+from weather_app.OpenWeatherMapAPI.APIkey import key
 
-def weather_forecast(lat, lon, key):
+def weather_forecast():
+
+
+    lat = input("Please insert the latitude: ")
+    lon = input("Please insert the longitude: ")
+    print("You will receive the weather forecast for the upcoming 5 days.")
+
     url = f"http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={key}&units=metric"
 
     response = requests.get(url)
@@ -29,13 +35,10 @@ def weather_forecast(lat, lon, key):
                 print(f"Temperature: {temp}°C")
                 print(f"Feels Like: {feels_like}°C")
                 print(f"Weather: {weather}")
-
+            print("Weather data provided by OpenWeather https://openweathermap.org/")
     else:
         print(f"Request failed with status code: {response.status_code}")
 
-# Example usage with Tel Aviv coordinates
-lat = input("Please insert the latitude: ")
-lon = input("Please insert the longitude: ")
-print("You will receive the weather forecast for the upcoming 5 days.")
-weather_forecast(lat, lon, key)
-print("Weather data provided by OpenWeather https://openweathermap.org/")
+
+
+

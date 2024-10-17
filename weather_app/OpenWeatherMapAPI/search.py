@@ -1,9 +1,10 @@
 import requests
-from OpenWeatherMapAPI.APIkey import key
+from weather_app.OpenWeatherMapAPI.APIkey import key
+from weather_app.OpenWeatherMapAPI.forecast import  weather_forecast
 
+def Geocoding():
 
-def Geocoding(city_name, key):
-
+    city_name = input("Enter the city name: ")
     url = f"http://api.openweathermap.org/geo/1.0/direct?q={city_name}&appid={key}"
 
     response = requests.get(url)
@@ -27,14 +28,15 @@ def Geocoding(city_name, key):
     else:
         print(f"Request failed with status code: {response.status_code}")
 
+    decision = input("Would you like to get weather forecast? y/n: ")
+    if decision == "y":
+        weather_forecast()
+    else:
+        exit()
 
 
 
 
-city_name = input("Enter the city name: ")
-Geocoding(city_name, key)
-decision=input("Would you like to get weather forecast? y/n: ")
-if decision == "y":
-    from OpenWeatherMapAPI import forecast
-else:
-    exit()
+
+
+
