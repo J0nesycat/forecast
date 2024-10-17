@@ -1,5 +1,5 @@
 
-from accounts.usersDB import users_db
+from .usersDB import users_db
 
 
 def authorize(username, password):
