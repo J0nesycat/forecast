@@ -16,4 +16,5 @@ weather_app/accounts/users_db.json
 
 # Ignore log files (if applicable)
 *.log
-
+# Ignore coverage files
+.coverage

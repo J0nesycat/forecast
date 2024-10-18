@@ -5,4 +5,5 @@ __pycache__/
 weather_app/accounts/users_db.json
 .idea/
 
-
+# Ignore coverage files
+.coverage
