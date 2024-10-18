@@ -28,11 +28,7 @@ def Geocoding():
     else:
         print(f"Request failed with status code: {response.status_code}")
 
-    decision = input("Would you like to get weather forecast? y/n: ")
-    if decision == "y":
-        weather_forecast()
-    else:
-        exit()
+
 
 
 
