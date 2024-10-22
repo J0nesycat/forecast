@@ -59,7 +59,7 @@ key = "YOUR_API_KEY_HERE"  # Replace this with your actual API key
     ```bash
     python weather.py
     ```
-Note: The path to weather.py is  /app/weather_app
+
 
 ## Contributions
 Feel free to submit issues, fork the project, or contribute via pull requests.
