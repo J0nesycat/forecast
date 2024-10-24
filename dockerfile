@@ -16,9 +16,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into /app
 COPY . .
 
+# Set the Python path so Python can find 'weather_app'
+ENV PYTHONPATH=/app
+
 # Expose port (if your app needs it)
 EXPOSE 5000
 
 # Set the command to run the app
 CMD ["python", "weather_app/weather.py"]
+
 

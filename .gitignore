@@ -5,8 +5,7 @@
 __pycache__/
 *.py[cod]
 
-#ignore sensitive files
-weather_app/OpenWeatherMapAPI/APIkey.py
+
 
 #ignore database
 weather_app/accounts/users_db.json
