@@ -57,4 +57,4 @@ This project is a weather forecast application that retrieves current weather da
 3. **Run the container in interactive mode**:
    To run the container and get a terminal inside it:
    ```bash
-   docker run -it -p 5000:5000 jonesycat/weather_forecast 
+   docker run -it -p 5000:5000 jonesycat/weather_forecast:v1.0 
