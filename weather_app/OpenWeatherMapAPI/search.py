@@ -1,8 +1,8 @@
 import requests
 import logging
-from weather_app.OpenWeatherMapAPI.APIkey import key
 
-def Geocoding():
+
+def Geocoding(key):
     city_name = input("Enter the city name: ")
     logging.debug(f"User input for city: {city_name}")
 
