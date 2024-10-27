@@ -53,15 +53,19 @@ This project is a weather forecast application that retrieves current weather da
    docker run -it -p 5000:5000 jonesycat/weather_forecast:fixed /bin/bash
 
 2. Navigate to the directory: Once inside the container, they can navigate to the directory where APIkey.py is located:
-cd /app/weather_app/OpenWeatherMapAPI/
+   ```bash
+   cd /app/weather_app/OpenWeatherMapAPI/
 
 3. Open the file for editing:
-nano APIkey.py
+   ```bash
+   nano APIkey.py
 
-key = "YOUR_API_KEY_HERE"  # Replace this with your actual API key
+4. key = "YOUR_API_KEY_HERE"  # Replace this with your actual API key
 
-4. Run the application:
+5. Navigate and run the application:
     ```bash
+    cd /app/weather_app
+    
     python weather.py
     ```
 
