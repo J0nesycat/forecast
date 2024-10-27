@@ -1,5 +1,8 @@
 import unittest
 from unittest.mock import patch, Mock
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from weather_app.OpenWeatherMapAPI.search import Geocoding
 from weather_app.OpenWeatherMapAPI.APIkey import key
 

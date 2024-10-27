@@ -9,6 +9,16 @@ logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s',
                     handlers=[logging.FileHandler("app.log"), logging.StreamHandler()])
 
+def get_validated_input(prompt, valid_options):
+    """Prompt user until they enter a valid option."""
+    while True:
+        user_input = input(prompt).strip().lower()
+        if user_input in valid_options:
+            return user_input
+        else:
+            print(f"Invalid input. Please enter one of the following: {', '.join(valid_options)}")
+            logging.warning(f"Invalid input received: {user_input}")
+
 def main():
     logging.info("Starting the application")
 
@@ -22,13 +32,13 @@ def main():
         logging.info(f"User {username} authorized successfully.")
         print(login[1])
         print("Proceeding to the software...")
-        decision = input("Would you like to get geographical coordinates first? y/n: ")
+        decision = get_validated_input("Would you like to get geographical coordinates first? y/n: ", ["y", "n"])
         logging.debug(f"User decision to get coordinates: {decision}")
 
         if decision == "y":
             logging.info(f"User {username} opted to fetch geographical coordinates.")
             Geocoding()
-            decision = input("Would you like to get weather forecast? y/n: ")
+            decision = get_validated_input("Would you like to get weather forecast? y/n: ", ["y", "n"])
             logging.debug(f"User decision to get weather forecast: {decision}")
 
             if decision == "y":
@@ -44,7 +54,7 @@ def main():
     else:
         logging.warning(f"User {username} failed to log in: {login[1]}")
         print(login[1])
-        decision = input("Would you like to sign up? y/n: ")
+        decision = get_validated_input("Would you like to sign up? y/n: ", ["y", "n"])
         logging.debug(f"User decision to sign up: {decision}")
 
         if decision == "y":
