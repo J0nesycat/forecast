@@ -1,9 +1,8 @@
 import requests
 import logging
-from weather_app.OpenWeatherMapAPI.APIkey import key
 
 
-def Geocoding():
+def Geocoding(key):
     city_name = input("Enter the city name: ")
     logging.debug(f"User input for city: {city_name}")
 
@@ -33,14 +32,12 @@ def Geocoding():
             logging.warning(f"No results found for city: {city_name}")
             print(f"No results found for city: {city_name}")
     else:
-        logging.error(f"Request to OpenWeather API failed with status code: {response.status_code}")
+        # Attempt to retrieve an error message from the API response JSON
+        try:
+            error_message = response.json().get("message", "No detailed error message provided.")
+        except ValueError:
+            error_message = "No detailed error message provided (invalid JSON response)."
+
+        logging.error(f"Request to OpenWeather API failed with status code: {response.status_code} - {error_message}")
         print(f"Request failed with status code: {response.status_code}")
-
-
-
-
-
-
-
-
-
+        print(f"Error message: {error_message}")
