@@ -21,7 +21,7 @@ This project is a weather forecast application that retrieves current weather da
     ```
 2. Navigate to the project directory:
     ```bash
-    cd weather_forecast
+    cd forecast
     ```
 3. Set up the virtual environment:
     ```bash
