@@ -3,7 +3,7 @@ from weather_app.accounts.authorization import authorize
 from weather_app.OpenWeatherMapAPI.search import Geocoding
 from weather_app.OpenWeatherMapAPI.forecast import weather_forecast
 from weather_app.accounts.registration import register_user
-
+from weather_app.OpenWeatherMapAPI.api_key import api_key
 # Configure logging
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -32,24 +32,25 @@ def main():
         logging.info(f"User {username} authorized successfully.")
         print(login[1])
         print("Proceeding to the software...")
+        key=api_key()
         decision = get_validated_input("Would you like to get geographical coordinates first? y/n: ", ["y", "n"])
         logging.debug(f"User decision to get coordinates: {decision}")
 
         if decision == "y":
             logging.info(f"User {username} opted to fetch geographical coordinates.")
-            Geocoding()
+            Geocoding(key)
             decision = get_validated_input("Would you like to get weather forecast? y/n: ", ["y", "n"])
             logging.debug(f"User decision to get weather forecast: {decision}")
 
             if decision == "y":
                 logging.info(f"User {username} opted to get weather forecast.")
-                weather_forecast()
+                weather_forecast(key)
             else:
                 logging.info(f"User {username} chose to exit after Geocoding.")
                 exit()
         else:
             logging.info(f"User {username} skipped Geocoding and opted for weather forecast.")
-            weather_forecast()
+            weather_forecast(key)
 
     else:
         logging.warning(f"User {username} failed to log in: {login[1]}")

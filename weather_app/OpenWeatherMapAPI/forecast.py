@@ -1,8 +1,9 @@
 import requests
 import logging
-from weather_app.OpenWeatherMapAPI.APIkey import key
 
-def weather_forecast():
+
+def weather_forecast(key):
+    
     lat = input("Please insert the latitude: ")
     lon = input("Please insert the longitude: ")
     logging.debug(f"User input for latitude: {lat}, longitude: {lon}")
