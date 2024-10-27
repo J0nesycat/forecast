@@ -2,7 +2,6 @@ import requests
 import logging
 from weather_app.OpenWeatherMapAPI.APIkey import key
 
-
 def weather_forecast():
     lat = input("Please insert the latitude: ")
     lon = input("Please insert the longitude: ")
@@ -46,9 +45,13 @@ def weather_forecast():
 
         print("Weather data provided by OpenWeather https://openweathermap.org/")
     else:
-        logging.error(f"Request to OpenWeather API failed with status code: {response.status_code}")
+        # Try to get an error message from the response JSON if available
+        try:
+            error_message = response.json().get("message", "No detailed error message provided.")
+        except ValueError:
+            error_message = "No detailed error message provided (invalid JSON response)."
+
+        logging.error(f"Request to OpenWeather API failed with status code: {response.status_code} - {error_message}")
         print(f"Request failed with status code: {response.status_code}")
-
-
-
+        print(f"Error message: {error_message}")
 
