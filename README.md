@@ -32,7 +32,12 @@ This project is a weather forecast application that retrieves current weather da
     ```bash
     pip install -r requirements.txt
     ```
-
+5.  Requirements
+    ```bash
+    - **Docker**: This project requires Docker for building and running containers.
+    - Download and install Docker Desktop from [Docker's official website](https://www.docker.com/products/docker-desktop).
+    - Ensure Docker is running and accessible in your command line interface.
+   ```
 ## Usage
 
 1. Activate the virtual environment:
